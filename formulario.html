@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cédula Casa por Casa - Estrategia Estatal "CAYAPADU LII"</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 5px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    .inline {
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: normal;
+    }
+    button[type="submit"] {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    button[type="submit"]:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cédula Casa por Casa</h1>
+  <h2>Estrategia Estatal: Territorios y Jornadas "CAYAPADU LII"</h2>
+  
+  <!-- Integramos el endpoint de Formspree en el atributo action -->
+  <form action="https://formspree.io/f/xovjlryl" method="POST">
+    
+    <!-- Sección 1: Datos Generales de la Persona Entrevistada -->
+    <fieldset>
+      <legend>1. Datos Generales</legend>
+      
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      
+      <label for="apellidoP">Apellido Paterno:</label>
+      <input type="text" id="apellidoP" name="apellidoP" required>
+      
+      <label for="apellidoM">Apellido Materno:</label>
+      <input type="text" id="apellidoM" name="apellidoM" required>
+      
+      <label for="municipio">Municipio / Colonia / Zona:</label>
+      <input type="text" id="municipio" name="municipio" required>
+      
+      <label for="telefonoFijo">Teléfono Fijo:</label>
+      <input type="text" id="telefonoFijo" name="telefonoFijo">
+      
+      <label for="telefonoCelular">Teléfono Celular:</label>
+      <input type="text" id="telefonoCelular" name="telefonoCelular">
+      
+      <label for="curp">CURP:</label>
+      <input type="text" id="curp" name="curp">
+      
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+    </fieldset>
+    
+    <!-- Sección 2: Composición del Hogar -->
+    <fieldset>
+      <legend>2. Composición del Hogar</legend>
+      
+      <label for="numPersonas">Número de personas en la vivienda:</label>
+      <input type="number" id="numPersonas" name="numPersonas" min="1">
+      
+      <label for="sostenEconomico">Principal sostén económico:</label>
+      <select id="sostenEconomico" name="sostenEconomico">
+        <option value="madre">Madre</option>
+        <option value="padre">Padre</option>
+        <option value="otro">Otro</option>
+      </select>
+      
+      <label for="otroSosten">Si seleccionó "Otro", especifique:</label>
+      <input type="text" id="otroSosten" name="otroSosten">
+      
+      <label for="num18_24">Número de personas entre 18 y 24 años:</label>
+      <input type="number" id="num18_24" name="num18_24" min="0">
+    </fieldset>
+    
+    <!-- Sección 3: Salud, Educación y Servicios -->
+    <fieldset>
+      <legend>3. Salud, Educación y Servicios</legend>
+      
+      <label for="servicioSalud">Servicio de salud:</label>
+      <select id="servicioSalud" name="servicioSalud">
+        <option value="imss">IMSS</option>
+        <option value="isseym">ISSEMyM</option>
+        <option value="imss_bienestar">IMSS Bienestar</option>
+        <option value="pemex">Pemex</option>
+        <option value="issste">ISSSTE</option>
+        <option value="seguro_privado">Seguro Privado</option>
+        <option value="farmacias_bienestar">Farmacias Bienestar</option>
+        <option value="otro">Otro</option>
+      </select>
+      
+      <label for="otroServicio">Si seleccionó "Otro", especifique:</label>
+      <input type="text" id="otroServicio" name="otroServicio">
+      
+      <label>¿Algún integrante requiere apoyo por adicciones?</label>
+      <input type="radio" id="adiccionSi" name="adiccion" value="si">
+      <label class="inline" for="adiccionSi">Sí</label>
+      <input type="radio" id="adiccionNo" name="adiccion" value="no">
+      <label class="inline" for="adiccionNo">No</label>
+      
+      <label for="detalleAdiccion">Detalle (en caso afirmativo):</label>
+      <textarea id="detalleAdiccion" name="detalleAdiccion" rows="3"></textarea>
+      
+      <label>¿Cuenta el hogar con acceso a internet?</label>
+      <input type="radio" id="internetSi" name="internet" value="si">
+      <label class="inline" for="internetSi">Sí</label>
+      <input type="radio" id="internetNo" name="internet" value="no">
+      <label class="inline" for="internetNo">No</label>
+    </fieldset>
+    
+    <!-- Sección 4: Educación y Empleo -->
+    <fieldset>
+      <legend>4. Educación y Empleo</legend>
+      
+      <label>¿Algún integrante entre 4 y 18 años no asiste a la escuela?</label>
+      <input type="radio" id="noEscuelaSi" name="noEscuela" value="si">
+      <label class="inline" for="noEscuelaSi">Sí</label>
+      <input type="radio" id="noEscuelaNo" name="noEscuela" value="no">
+      <label class="inline" for="noEscuelaNo">No</label>
+      
+      <label for="detalleNoEscuela">Detalle (en caso afirmativo):</label>
+      <textarea id="detalleNoEscuela" name="detalleNoEscuela" rows="3"></textarea>
+    </fieldset>
+    
+    <!-- Sección 5: Situaciones de Vulnerabilidad y Apoyo -->
+    <fieldset>
+      <legend>5. Situaciones de Vulnerabilidad y Apoyo</legend>
+      
+      <label>¿Algún integrante ha vivido violencia?</label>
+      <input type="radio" id="violenciaSi" name="violencia" value="si">
+      <label class="inline" for="violenciaSi">Sí</label>
+      <input type="radio" id="violenciaNo" name="violencia" value="no">
+      <label class="inline" for="violenciaNo">No</label>
+      
+      <label for="detalleViolencia">Detalle (en caso afirmativo):</label>
+      <textarea id="detalleViolencia" name="detalleViolencia" rows="3"></textarea>
+    </fieldset>
+    
+    <!-- Sección 6: Datos de Quién Realiza la Entrevista -->
+    <fieldset>
+      <legend>6. Datos del Entrevistador</legend>
+      
+      <label for="entrevistadorNombre">Nombre Completo:</label>
+      <input type="text" id="entrevistadorNombre" name="entrevistadorNombre" required>
+      
+      <label for="dependencia">Dependencia:</label>
+      <select id="dependencia" name="dependencia">
+        <option value="secretariado">Secretariado Ejecutivo del Sistema Estatal de Seguridad Pública</option>
+        <option value="seguridad">Secretaría de Seguridad y Protección Ciudadana</option>
+        <option value="mujeres">Secretaría de las Mujeres</option>
+        <option value="sesipinna">SESIPINNA</option>
+        <option value="registro_civil">Dirección de Registro Civil</option>
+        <option value="educacion">Secretaría de Educación Pública</option>
+        <option value="iep">Instituto Estatal de Educación Pública</option>
+        <option value="alfabetizacion">Programa de Alfabetización</option>
+        <option value="trabajo">Secretaría del Trabajo</option>
+        <option value="empleo">Coordinación del Servicio Nacional de Empleo</option>
+        <option value="capacitacion">Instituto de Capacitación y Productividad para el Trabajo</option>
+        <option value="juventud">Instituto de la Juventud</option>
+        <option value="bienestar">Secretaría de Bienestar, Tequio e Inclusión</option>
+        <option value="salud">Secretaría de Servicios de Salud</option>
+        <option value="otro">Otra</option>
+      </select>
+      
+      <label for="firma">Firma (opcional):</label>
+      <input type="text" id="firma" name="firma">
+    </fieldset>
+    
+    <!-- Sección 7: Preguntas Adicionales -->
+    <fieldset>
+      <legend>7. Preguntas Adicionales</legend>
+      
+      <label for="seguridadColonia">Del 1 al 10, ¿qué tan segura considera su colonia?</label>
+      <input type="range" id="seguridadColonia" name="seguridadColonia" min="1" max="10" value="5">
+      
+      <label for="satisfaccionServicios">¿Qué tan satisfecho se siente con los servicios públicos?</label>
+      <select id="satisfaccionServicios" name="satisfaccionServicios">
+        <option value="muy_satisfecho">Muy satisfecho</option>
+        <option value="satisfecho">Satisfecho</option>
+        <option value="neutral">Neutral</option>
+        <option value="insatisfecho">Insatisfecho</option>
+        <option value="muy_insatisfecho">Muy insatisfecho</option>
+      </select>
+      
+      <label for="retosComunitarios">Principales retos en su comunidad:</label>
+      <textarea id="retosComunitarios" name="retosComunitarios" rows="3"></textarea>
+      
+      <label for="experienciaGobierno">¿Ha recibido apoyo del Gobierno? Indique cuáles:</label>
+      <textarea id="experienciaGobierno" name="experienciaGobierno" rows="3"></textarea>
+      
+      <label for="talleresComunitarios">¿Le interesaría participar en talleres comunitarios? Indique su medio de contacto si es afirmativo:</label>
+      <input type="radio" id="talleresSi" name="talleresComunitarios" value="si">
+      <label class="inline" for="talleresSi">Sí</label>
+      <input type="radio" id="talleresNo" name="talleresComunitarios" value="no">
+      <label class="inline" for="talleresNo">No</label>
+      
+      <label for="medioContacto">Medio de contacto:</label>
+      <input type="text" id="medioContacto" name="medioContacto">
+    </fieldset>
+    
+    <!-- Botón de envío -->
+    <button type="submit">Enviar</button>
+  </form>
+  
+</body>
+</html>
